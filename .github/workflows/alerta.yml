@@ -1,0 +1,23 @@
+name: Notificacion de CI a ntfy
+
+on: [push]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+
+      - name: Ejecutar Hola Mundo
+        run: node index.js
+
+      - name: Enviar Alerta a ntfy.sh
+        if: success()
+        run: |
+          curl -H "Title: CI/CD Pipeline Exitoso" \
+               -H "Priority: urgent" \
+               -H "Tags: rocket,white_check_mark" \
+               -d "El repositorio ha sido actualizado en la rama main. ¡El Hola Mundo corrio perfectamente! 🚀" \
+               https://ntfy.sh/devops-itla
