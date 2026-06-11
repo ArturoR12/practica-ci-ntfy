@@ -19,5 +19,5 @@ jobs:
           curl -H "Title: CI/CD Pipeline Exitoso" \
                -H "Priority: urgent" \
                -H "Tags: rocket,white_check_mark" \
-               -d "El repositorio ha sido actualizado en la rama main. ¡El Hola Mundo corrio perfectamente! 🚀" \
+               -d "El repositorio ha sido actualizado en la rama main. El hola ha sido enviado exitosamente." \
                https://ntfy.sh/devops-itla
