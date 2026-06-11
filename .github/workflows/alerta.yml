@@ -16,8 +16,6 @@ jobs:
       - name: Enviar Alerta a ntfy.sh
         if: success()
         run: |
-          curl -H "Title: CI/CD Pipeline Exitoso" \
-               -H "Priority: urgent" \
-               -H "Tags: rocket,white_check_mark" \
+          curl -H "Priority: urgent" \
                -d "El repositorio ha sido actualizado en la rama main. El hola ha sido enviado exitosamente." \
                https://ntfy.sh/devops-itla
